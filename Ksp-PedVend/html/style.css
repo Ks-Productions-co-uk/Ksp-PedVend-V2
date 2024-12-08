@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.main-panel {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(40, 44, 52, 0.95);
+    color: #E6E6E6;
+    padding: 15px;
+    border-radius: 8px;
+    width: 60%;
+    height: 60%;
+    overflow: hidden;
+    border: 2px solid rgba(198, 55, 55, 0.5);
+    box-shadow: 0 0 8px #C63737;
+}
+
+.panel-header {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #C63737;
+    letter-spacing: 2px;
+    padding-left: 66px;
+    position: relative;
+    top: -5px;
+    border: 2px solid rgba(198, 55, 55, 0.5);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+#search-box {
+    background-color: rgba(40, 44, 52, 0.3);
+    border: 2px solid rgba(198, 55, 55, 0.5);
+    color: #E6E6E6;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+#search-box::placeholder {
+    color: rgba(230, 230, 230, 0.5);
+}
+
+#search-box:focus {
+    outline: none;
+    box-shadow: 0 0 5px #C63737;
+}
+
+.panel-content {
+    display: flex;
+    height: calc(100% - 50px);
+}
+
+.left-sidebar {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgba(198, 55, 55, 0.5);
+    padding: 8px;
+    border-radius: 8px;
+    position: relative;
+    top: -10px;
+}
+
+.categories-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-item {
+    background-color: rgba(40, 44, 52, 0.3);
+    border-radius: 4px;
+    padding: 8px;
+    margin: 4px 0;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(198, 55, 55, 0.5);
+    width: 180px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.category-item:hover {
+    background-color: rgba(198, 55, 55, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 0 8px #C63737;
+}
+
+.control-buttons {
+    padding: 8px;
+}
+
+.control-button {
+    display: block;
+    width: 180px;
+    padding: 8px;
+    margin: 4px 0;
+    background-color: rgba(40, 44, 52, 0.3);
+    color: #E6E6E6;
+    border: 2px solid rgba(198, 55, 55, 0.5);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.control-button:hover {
+    background-color: rgba(198, 55, 55, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 0 8px #C63737;
+}
+
+.items-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+    justify-content: start;
+    align-content: start;
+}
+
+.item {
+    width: 90px;
+    height: 150px;
+    background-color: rgba(40, 44, 52, 0.3);
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    background-color: rgba(198, 55, 55, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 0 8px rgba(198, 55, 55, 0.5);
+}
+
+.item img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    margin-bottom: 4px;
+}
+
+.item-name, .item-price {
+    margin-top: 2px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.item-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-label {
+    color: #C63737;
+}
+
+.price-value {
+    color: #E6E6E6;
+}
+
+.item-quantity {
+    width: 36px;
+    margin-top: 2px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.categories-container, .items-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.categories-container::-webkit-scrollbar, .items-container::-webkit-scrollbar {
+    display: none;
+}
+
+i[class^="fas"] {
+    color: #C63737;
+}
+
+#buy-items {
+    background-color: rgba(198, 55, 55, 0.3);
+    color: #E6E6E6;
+}
+
+#buy-items:hover {
+    background-color: rgba(198, 55, 55, 0.5);
+}
